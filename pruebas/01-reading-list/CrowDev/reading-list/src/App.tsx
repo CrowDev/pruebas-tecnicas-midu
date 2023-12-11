@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import books from '../../../books.json'
 import { Book, BookInfo, Library } from './@types'
 import './style.css'
+import { BooksList } from './components/books-list'
+import { ReadingList } from './components/readling-list'
 
 export const App = () => {
 
@@ -51,32 +53,8 @@ export const App = () => {
 				</div>
 			</header>
 			<main>
-				<section className='library'>
-					{availableBooks.map(({book}) => {
-						return (
-							<article key={book.ISBN} className='card'>
-								<figure>
-									<img className='book-cover' src={book.cover} onClick={() => addToSelectedBooks(book)} />
-								</figure>
-								<p>
-									{book.title}
-								</p>
-							</article>
-						)
-					})}
-				</section>
-				<section>
-				{selectedBooks.map((book) => {
-						return (
-							<article key={book.ISBN}>
-								<p>
-									{book.title}
-								</p>
-								<img className='book-cover' src={book.cover} onClick={() => removeBookFromSelected(book)} />
-							</article>
-						)
-					})}
-				</section>
+				<BooksList availableBooks={availableBooks} addToSelectedBooks={addToSelectedBooks} />
+				<ReadingList  selectedBooks={selectedBooks} removeBookFromSelected={removeBookFromSelected} />
 			</main>
 		</>
 	)
