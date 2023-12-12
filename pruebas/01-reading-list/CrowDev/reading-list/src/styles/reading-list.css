@@ -1,0 +1,21 @@
+.reading-list {
+	width: 400px;
+	min-height: 170px;
+	height: fit-content;
+	border: 1px solid white;
+	border-radius: 15px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 10px;
+	gap: 10px;
+	/* place-content: center; */
+}
+
+.reading-list article {
+	height: fit-content;
+}
+
+.book-cover-reading {
+	width: 100px;
+
+}

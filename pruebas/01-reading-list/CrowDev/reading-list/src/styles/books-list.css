@@ -1,0 +1,22 @@
+.library {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 800px;
+}
+
+.book-cover {
+  cursor: pointer;
+}
+
+.card {
+	overflow: hidden;
+  background-color: #333333;
+  border-radius: 25px;
+}
+
+.card p {
+	padding: 10px 15px;
+	text-align: center;
+	font-weight: 500;
+}

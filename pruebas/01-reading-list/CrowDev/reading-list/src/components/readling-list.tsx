@@ -1,4 +1,5 @@
 import { BookInfo } from '../@types';
+import '../styles/reading-list.css'
 
 interface Props {
 	selectedBooks: BookInfo[]
@@ -7,18 +8,17 @@ interface Props {
 
 export const ReadingList = ({selectedBooks, removeBookFromSelected}: Props) => {
   return (
-    <section>
+    <section className={`reading-list`}>
       {selectedBooks.map((book) => {
         return (
           <article key={book.ISBN}>
-            <p>{book.title}</p>
             <img
-              className="book-cover"
+              className="book-cover-reading"
               src={book.cover}
               onClick={() => removeBookFromSelected(book)}
             />
           </article>
-        );
+        )
       })}
     </section>
   );
