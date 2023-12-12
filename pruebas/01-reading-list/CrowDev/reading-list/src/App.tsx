@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import books from '../../../books.json'
 import { Book, BookInfo, Library } from './@types'
-import './style.css'
 import { BooksList } from './components/books-list'
 import { ReadingList } from './components/readling-list'
+import './styles/app.css'
 
 export const App = () => {
 
@@ -54,7 +54,7 @@ export const App = () => {
 			</header>
 			<main>
 				<BooksList availableBooks={availableBooks} addToSelectedBooks={addToSelectedBooks} />
-				<ReadingList  selectedBooks={selectedBooks} removeBookFromSelected={removeBookFromSelected} />
+				<ReadingList selectedBooks={selectedBooks} removeBookFromSelected={removeBookFromSelected} />
 			</main>
 		</>
 	)
